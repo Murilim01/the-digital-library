@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, ShoppingCart, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Book {
   id: number;
@@ -83,9 +84,11 @@ const BookCard = ({ book }: BookCardProps) => {
         </div>
 
         {/* Quick View */}
-        <Button variant="ghost" className="w-full mt-2 text-sm text-gray-600 hover:text-blue-600">
-          Ver Detalhes
-        </Button>
+        <Link to={`/book/${book.id}`}>
+          <Button variant="ghost" className="w-full mt-2 text-sm text-gray-600 hover:text-blue-600">
+            Ver Detalhes
+          </Button>
+        </Link>
       </div>
     </div>
   );
